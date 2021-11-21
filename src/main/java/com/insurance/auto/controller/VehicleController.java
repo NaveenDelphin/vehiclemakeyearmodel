@@ -47,6 +47,13 @@ public class VehicleController {
 	}
 	
 	@CrossOrigin
+	@GetMapping("/vehicles")
+	public Page<VehicleDetails> listUsers(Pageable pageable)
+	{
+		return vehicleRepository.findAll(pageable);
+	}
+	
+	@CrossOrigin
 	@GetMapping(value="/vehicleMake/{Year}")
 	public Responseext getvehicleModel(@PathVariable("Year") int year){
 		RestTemplate resttemplate1 = new RestTemplate();
