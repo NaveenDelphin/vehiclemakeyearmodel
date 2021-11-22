@@ -81,8 +81,28 @@ public class VehicleController {
 			  yearmake.add(yr);
 			  mfrmake.add(mfr);
 		 } 
-		   resp.setYear(yearmake);
-		   resp.setMake(mfrmake);
+		  ArrayList<Object> yearList = new ArrayList<Object>();
+		   for (Object element : yearmake) {
+			   
+	            // If this element is not present in newList
+	            // then add it
+	            if (!yearList.contains(element)) {
+	  
+	                yearList.add(element);
+	            }
+	        }
+		   ArrayList<Object> mfrList = new ArrayList<Object>();
+		   for (Object element : mfrmake) {
+			   
+	            // If this element is not present in newList
+	            // then add it
+	            if (!mfrList.contains(element)) {
+	  
+	                mfrList.add(element);
+	            }
+	        }
+		   resp.setYear(yearList);
+		   resp.setMake(mfrList);
 		return resp;
 	}	
 	
