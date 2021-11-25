@@ -28,6 +28,7 @@ public class VehicleDetails {
 	private long vehicleId;
 	
 	@Column(name="engineNo")
+	@JsonProperty("vinNo")
 	private String engineNo;
 	
 	@Column(name="year")
@@ -41,7 +42,8 @@ public class VehicleDetails {
 	
 	@Column(name="vehicleFinance")
 	private String vehicleFinance;
-
+	
+	@JsonProperty("vinNo")
 	public String getEngineNo() {
 		return engineNo;
 	}
@@ -49,7 +51,7 @@ public class VehicleDetails {
 	public void setEngineNo(String engineNo) {
 		this.engineNo = engineNo;
 	}
-
+	@JsonProperty("year")
 	public String getYear() {
 		return year;
 	}
@@ -57,7 +59,7 @@ public class VehicleDetails {
 	public void setYear(String year) {
 		this.year = year;
 	}
-
+	@JsonProperty("make")
 	public String getMake() {
 		return make;
 	}
@@ -65,7 +67,7 @@ public class VehicleDetails {
 	public void setMake(String make) {
 		this.make = make;
 	}
-
+	@JsonProperty("model")
 	public String getModel() {
 		return model;
 	}
@@ -73,7 +75,7 @@ public class VehicleDetails {
 	public void setModel(String model) {
 		this.model = model;
 	}
-
+	@JsonProperty("vehicleFinance")
 	public String getVehicleFinance() {
 		return vehicleFinance;
 	}
