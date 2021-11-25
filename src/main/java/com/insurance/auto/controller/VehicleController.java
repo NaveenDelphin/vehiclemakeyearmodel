@@ -39,12 +39,19 @@ public class VehicleController {
 	
 	@CrossOrigin
 	@PostMapping("/vehicle")
-	public VehicleDetails createVehicle(@Valid @RequestBody VehicleDetails vehicleDetails ) {
-	
-		VehicleDetails vehicleDetails1 = vehicleRepository.save(vehicleDetails);
-		return vehicleDetails;
+	public ArrayList<VehicleDetails> createVehicle(@Valid @RequestBody ArrayList<VehicleDetails> vehicle ) {
 		
-	}
+		
+		for(VehicleDetails vehicledetails:vehicle) {
+		  VehicleDetails vehicleDetails1 = vehicleRepository.save(vehicledetails);
+		  System.out.print(vehicledetails);
+		}
+		  
+		 
+		return vehicle;
+		
+	}	
+	
 	
 	@CrossOrigin
 	@GetMapping("/vehicles")
